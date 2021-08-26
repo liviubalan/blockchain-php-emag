@@ -1,3 +1,4 @@
+# Test 1
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
 
