@@ -65,13 +65,13 @@ do
         git reset --hard "${BTC_COMMIT_HASH[BTC_TMP_I]}" >/dev/null 2>&1
 
         #  Get the list of all files in the commit
-        BTC_COMMIT_FILES=$(git ls-tree --name-only -r "${BTC_COMMIT_HASH[BTC_TMP_I]}")
+        BTC_COMMIT_FILES=$(git diff-tree --no-commit-id --name-only -r "${BTC_COMMIT_HASH[BTC_TMP_I]}")
 
         # Current project
         cd "${BTC_CONFIG_GIT}"
 
         # Reset Git to previous commit
-        git reset --hard "${BTC_COMMIT_HASH[BTC_TMP_I]-1}" >/dev/null 2>&1
+        git reset --hard "${BTC_COMMIT_HASH[BTC_TMP_I-1]}" >/dev/null 2>&1
 
         echo "Step "${BTC_STEP}": ${BTC_COMMIT_DESCRIPTION[BTC_TMP_I]}"
         echo "Previous commit: ${BTC_COMMIT_HASH[BTC_TMP_I-1]}"
