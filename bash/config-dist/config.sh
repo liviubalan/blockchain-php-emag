@@ -1,1 +1,5 @@
-BTC_CONFIG_PHPSTORM='/liviu-doc/Dev/PhpStorm-212.4746.100/bin/phpstorm.sh'
+# PHPStorm absolute path
+BTC_CONFIG_PHPSTORM=''
+
+# Temporary Git project absolute path with no trailing slash
+BTC_CONFIG_GIT_2=''
