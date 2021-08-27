@@ -1,3 +1,5 @@
+#!/bin/bash
+
 BTC_COMMIT_HASH=(
     '6428b9afb3081b8a06e84bc4e707d1a24ba665f7' # Step 0 - Genesys, may not be used as step
     '2c1cfec8312bd709d7e30fedfb483e921583aac0' # Step 1 - Start from here

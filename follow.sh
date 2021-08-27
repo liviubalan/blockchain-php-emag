@@ -84,14 +84,18 @@ do
         for BTC_COMMIT_FILE in "${BTC_COMMIT_FILES[@]}"
         do
             echo "${BTC_COMMIT_FILE}"
+
+            # Copy file
+            cp "${BTC_CONFIG_GIT_2}/${BTC_COMMIT_FILE}" "${BTC_CONFIG_GIT}/${BTC_COMMIT_FILE}"
+
             # Check empty data
             if [ -n "${BTC_CONFIG_PHPSTORM}" ]; then
-                cp "${BTC_CONFIG_GIT_2}/${BTC_COMMIT_FILE}" "${BTC_CONFIG_GIT}/${BTC_COMMIT_FILE}"
+                # Open file in PhpStorm
                 $BTC_CONFIG_PHPSTORM --line 1 "${BTC_COMMIT_FILE}" >/dev/null 2>&1
             fi
         done
 
-        # Commit were shown so do not continue to next commit
+        # Commit changes where shown so do not continue to next commit
         break
     fi
 

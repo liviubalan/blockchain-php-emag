@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # PHPStorm absolute path
 BTC_CONFIG_PHPSTORM=''
 
