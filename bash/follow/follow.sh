@@ -1,5 +1,7 @@
 #!/bin/bash
 
+BTC_DIR_ROOT="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+
 echo 'Follow the wizard.' && exit 1
 
 # Check parameter count
@@ -17,22 +19,22 @@ if ! [[ "${BTC_STEP}" =~ ^[0-9]+$ ]]; then
 fi
 
 # Check file existence
-BTC_TMP_FILE='./bash/config/config.sh'
+BTC_TMP_FILE="${BTC_DIR_ROOT}/bash/follow/config/config.sh"
 if [ ! -f "${BTC_TMP_FILE}" ]; then
     echo "File '${BTC_TMP_FILE}' not found."
     exit 1
 fi
 
 # Check file existence
-BTC_TMP_FILE='./bash/config/commits.sh'
+BTC_TMP_FILE="${BTC_DIR_ROOT}/bash/follow/config/commits.sh"
 if [ ! -f "${BTC_TMP_FILE}" ]; then
     echo "File '${BTC_TMP_FILE}' not found."
     exit 1
 fi
 
 # Include files
-source './bash/config/config.sh'
-source './bash/config/commits.sh'
+source "${BTC_DIR_ROOT}/bash/follow/config/config.sh"
+source "${BTC_DIR_ROOT}/bash/follow/config/commits.sh"
 
 # Check empty data
 if [ -z "${BTC_CONFIG_GIT_2}" ]; then
