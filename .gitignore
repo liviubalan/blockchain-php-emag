@@ -16,5 +16,6 @@
 
 # Project specific
 
-# Config dir
-/bash/config/
+# follow.sh
+/bash/follow/config/
+follow.sh

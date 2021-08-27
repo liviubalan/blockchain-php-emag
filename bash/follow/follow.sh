@@ -1,5 +1,7 @@
 #!/bin/bash
 
+echo 'Follow the wizard.' && exit 1
+
 # Check parameter count
 if [ "$#" -lt '1' ]; then
     echo 'Illegal number of parameters.'
