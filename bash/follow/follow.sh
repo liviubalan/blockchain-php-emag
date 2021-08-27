@@ -64,7 +64,7 @@ do
     if [ "${BTC_TMP_I}" -eq "${BTC_STEP}" ]; then
         # Git2 project
         cd "${BTC_CONFIG_GIT_2}"
-        git fetch
+        git fetch >/dev/null 2>&1
         # Reset Git to current commit
         git reset --hard "${BTC_COMMIT_HASH[BTC_TMP_I]}" >/dev/null 2>&1
 
