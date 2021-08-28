@@ -10,12 +10,14 @@ echo ''
 echo 'Relax and let me configure your EOS machine.'
 echo 'All you have to to is to focus on the Blockchain technology.'
 echo ''
+echo 'Loading...'
+echo ''
 
 BTC_VIRTUAL_HOST_ECREDIT='/etc/nginx/sites-available/ecredit.emag.ro.conf'
 BTC_VIRTUAL_HOST_BLOCKCHAIN='/etc/nginx/sites-available/blockchain.emag.ro.conf'
 
 # Check directory existence
-if [ ! -d "${BTC_VIRTUAL_HOST_ECREDIT}" ]; then
+if [ ! -f "${BTC_VIRTUAL_HOST_ECREDIT}" ]; then
     echo "'${BTC_VIRTUAL_HOST_ECREDIT}' is not a valid file."
     exit 1
 fi
@@ -31,5 +33,13 @@ btc_strf_replace_once 'ecredit' 'blockchain' "${BTC_VIRTUAL_HOST_BLOCKCHAIN}"
 btc_strf_replace_once '/var/www/blockchain.emag/web' '/var/www/blockchain.emag/www/public' "${BTC_VIRTUAL_HOST_BLOCKCHAIN}"
 btc_strf_replace_once 'app.php' 'index.php' "${BTC_VIRTUAL_HOST_BLOCKCHAIN}"
 
+# Remove file
+sudo rm -f /etc/nginx/sites-enabled/blockchain.emag.ro.conf
+
+# Create symbolic link
+sudo ln -s /etc/nginx/sites-available/blockchain.emag.ro.conf /etc/nginx/sites-enabled/blockchain.emag.ro.conf
+
 # Restart Nginx to apply the changes
 sudo systemctl restart nginx
+
+echo "You're good to go!"
