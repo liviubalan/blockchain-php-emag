@@ -25,14 +25,14 @@ if [ ! -d "${BTC_TMP_ANSWER}" ]; then
     exit 1
 fi
 
-# Remove old config
-rm -rf "${BTC_DIR_ROOT}/config"
+# Remove old include
+rm -rf "${BTC_DIR_ROOT}/include"
 
 # Copy directory
-cp -r "${BTC_DIR_ROOT}/config-dist" "${BTC_DIR_ROOT}/config"
+cp -r "${BTC_DIR_ROOT}/include-dist" "${BTC_DIR_ROOT}/include"
 
 # Replace value
-sed -i "s#BTC_CONFIG_GIT_2=''#BTC_CONFIG_GIT_2='${BTC_TMP_ANSWER}'#g" "${BTC_DIR_ROOT}/config/config.sh"
+sed -i "s#BTC_CONFIG_GIT_2=''#BTC_CONFIG_GIT_2='${BTC_TMP_ANSWER}'#g" "${BTC_DIR_ROOT}/include/config.sh"
 
 # Prompt question
 BTC_TMP_QUESTION='PhpStorm absolute path: '
@@ -49,7 +49,7 @@ if [ -n "${BTC_TMP_ANSWER}" ]; then
 fi
 
 # Replace value
-sed -i "s#BTC_CONFIG_PHPSTORM=''#BTC_CONFIG_PHPSTORM='${BTC_TMP_ANSWER}'#g" "${BTC_DIR_ROOT}/config/config.sh"
+sed -i "s#BTC_CONFIG_PHPSTORM=''#BTC_CONFIG_PHPSTORM='${BTC_TMP_ANSWER}'#g" "${BTC_DIR_ROOT}/include/config.sh"
 
 # Copy file
 cp "${BTC_DIR_ROOT}/follow.sh" "${BTC_DIR_ROOT}/../../follow.sh"
