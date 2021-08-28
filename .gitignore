@@ -17,5 +17,5 @@
 # Project specific
 
 # follow.sh
-/bash/follow/config/
+/bash/follow/include/
 follow.sh
