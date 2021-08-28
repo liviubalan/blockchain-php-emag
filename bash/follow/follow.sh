@@ -87,15 +87,25 @@ do
 
         for BTC_COMMIT_FILE in "${BTC_COMMIT_FILES[@]}"
         do
-            echo "${BTC_COMMIT_FILE}"
+            BTC_COMMIT_FILE_PATH="${BTC_CONFIG_GIT_2}/${BTC_COMMIT_FILE}"
 
-            # Copy file
-            cp "${BTC_CONFIG_GIT_2}/${BTC_COMMIT_FILE}" "${BTC_CONFIG_GIT}/${BTC_COMMIT_FILE}"
+            # Check file existence
+            if [ -f "${BTC_COMMIT_FILE_PATH}" ]; then
+                echo "${BTC_COMMIT_FILE}"
+
+                # Copy file
+                cp "${BTC_COMMIT_FILE_PATH}" "${BTC_CONFIG_GIT}/${BTC_COMMIT_FILE}"
+            else
+                echo "${BTC_COMMIT_FILE} (deleted)"
+            fi
 
             # Check empty data
             if [ -n "${BTC_CONFIG_PHPSTORM}" ]; then
-                # Open file in PhpStorm
-                $BTC_CONFIG_PHPSTORM --line 1 "${BTC_COMMIT_FILE}" >/dev/null 2>&1
+                # Check file existence
+                if [ -f "${BTC_COMMIT_FILE_PATH}" ]; then
+                    # Open file in PhpStorm
+                    $BTC_CONFIG_PHPSTORM --line 1 "${BTC_COMMIT_FILE}" >/dev/null 2>&1
+                fi
             fi
         done
 
