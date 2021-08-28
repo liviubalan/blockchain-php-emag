@@ -2,6 +2,9 @@
 
 BTC_DIR_ROOT="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
+# Include file
+source "${BTC_DIR_ROOT}/../include/functions.sh"
+
 echo 'Welcome to "Blockchain with PHP" by Liviu Balan!'
 echo ''
 echo 'Pleases provide your answer to the following questions.'
@@ -32,7 +35,7 @@ rm -rf "${BTC_DIR_ROOT}/include"
 cp -r "${BTC_DIR_ROOT}/include-dist" "${BTC_DIR_ROOT}/include"
 
 # Replace value
-sed -i "s#BTC_CONFIG_GIT_2=''#BTC_CONFIG_GIT_2='${BTC_TMP_ANSWER}'#g" "${BTC_DIR_ROOT}/include/config.sh"
+btc_strf_replace_once "BTC_CONFIG_GIT_2=''" "BTC_CONFIG_GIT_2='${BTC_TMP_ANSWER}'" "${BTC_DIR_ROOT}/include/config.sh"
 
 # Prompt question
 BTC_TMP_QUESTION='PhpStorm absolute path: '
@@ -49,10 +52,10 @@ if [ -n "${BTC_TMP_ANSWER}" ]; then
 fi
 
 # Replace value
-sed -i "s#BTC_CONFIG_PHPSTORM=''#BTC_CONFIG_PHPSTORM='${BTC_TMP_ANSWER}'#g" "${BTC_DIR_ROOT}/include/config.sh"
+btc_strf_replace_once "BTC_CONFIG_PHPSTORM=''" "BTC_CONFIG_PHPSTORM='${BTC_TMP_ANSWER}'" "${BTC_DIR_ROOT}/include/config.sh"
 
 # Copy file
 cp "${BTC_DIR_ROOT}/follow.sh" "${BTC_DIR_ROOT}/../../follow.sh"
 
 # Replace value
-sed -i "s/echo 'Follow the wizard.' && exit 1//g" "${BTC_DIR_ROOT}/../../follow.sh"
+btc_strf_replace_once "echo 'Follow the wizard.' && exit 1" '' "${BTC_DIR_ROOT}/../../follow.sh"

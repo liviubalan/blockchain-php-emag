@@ -32,7 +32,7 @@ if [ ! -f "${BTC_TMP_FILE}" ]; then
     exit 1
 fi
 
-# Include files
+# Include file
 source "${BTC_DIR_ROOT}/bash/follow/include/config.sh"
 source "${BTC_DIR_ROOT}/bash/follow/include/commits.sh"
 
