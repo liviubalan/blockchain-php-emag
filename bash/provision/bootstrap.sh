@@ -53,7 +53,7 @@ btc_strf_replace_once 'listen = 127.0.0.1:9000' 'listen = /var/run/php-fpm/php-f
 # Change the owner and group settings for the socket file
 btc_strf_replace_once ';listen.owner = nobody' 'listen.owner = nginx' '/etc/php-fpm.d/www.conf'
 btc_strf_replace_once ';listen.group = nobody' 'listen.group = nginx' '/etc/php-fpm.d/www.conf'
-btc_strf_replace_once ';listen.mode = 0660' 'listen.mode = 0660' '/etc/php-fpm.d/www.conf'
+btc_strf_replace ';listen.mode = 0660' 'listen.mode = 0660' '/etc/php-fpm.d/www.conf'
 
 # Enable and start the php-fpm service
 sudo systemctl start php-fpm
