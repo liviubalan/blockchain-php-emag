@@ -68,13 +68,14 @@ if [ ! -d "${BTC_DIR}" ]; then
     BTC_TMP_REPLACE=$(cat "${BTC_DIR_ROOT}/nginx/config/replace-conf.conf")
     BTC_TMP_FILE='/etc/nginx/nginx.conf'
     btc_strf_replace_once "${BTC_TMP_SEARCH}" "${BTC_TMP_REPLACE}" "${BTC_TMP_FILE}"
-
-    # Increases how much memory is reserved for examining multiple domain names
-#    sudo bash -c "echo 'server_names_hash_bucket_size 64;' >> /etc/nginx/nginx.conf"
 fi
 
 # Copy file
 sudo cp /vagrant/bash/provision/nginx/blockchain.conf "${BTC_DIR}"
+
+# Use hostname
+BTC_HOST=$(hostname)
+btc_strf_replace_once 'node1.net' "${BTC_HOST}" '/etc/nginx/sites-available/blockchain.conf'
 
 # Create dir if it does not exist
 BTC_DIR='/etc/nginx/sites-enabled'
