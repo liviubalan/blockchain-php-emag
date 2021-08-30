@@ -19,10 +19,10 @@ In order to run this project on your machine you have to install the following p
 
 * [Git](https://git-scm.com/). Checkout
 [Git install on Ubuntu Server](https://www.liviubalan.com/git-install-on-ubuntu-server) for more details
-* [VirtualBox](https://www.virtualbox.org/) (`dev` environment). Checkout
+* [VirtualBox](https://www.virtualbox.org/). Checkout
 [Install VirtualBox on Linux Mint using CLI](https://www.liviubalan.com/install-virtualbox-on-linux-mint-using-cli)
 for more details
-* [Vagrant](https://www.vagrantup.com/) (`dev` environment). Checkout
+* [Vagrant](https://www.vagrantup.com/). Checkout
 [Vagrant Install on Linux Mint/Ubuntu Desktop](https://www.liviubalan.com/vagrant-install-on-linux-mintubuntu-desktop)
 for more details
 
@@ -37,14 +37,14 @@ A web browser (such as [Google Chrome](https://en.wikipedia.org/wiki/Google_Chro
 
 ### 1. localhost
 
-After the [Requirements](https://gitlab.com/liviubalan/blockchain-php#requirements) section is checked, open a
+After the [Requirements](https://github.com/liviubalan/blockchain-php#1-localhost) section is checked, open a
 [console](https://en.wikipedia.org/wiki/Command-line_interface) and follow this steps:
 
 1. Clone the [GitHub](https://github.com/liviubalan/blockchain-php) main project. To clone the project to
 `blockchain-php` use:
 
     ```bash
-    git clone git@gitlab.com:liviubalan/blockchain-php blockchain-php
+    git clone git@github.com:liviubalan/blockchain-php.git blockchain-php
     ```
 
 2. Clone the [GitHub](https://github.com/liviubalan/blockchain-php) temporary project. This will help you to follow the
@@ -52,7 +52,7 @@ project during the course without typing any line of code but be able to see the
 that this directory is temporary so do not rely on its content.  To clone the project to `blockchain-php-2` use:
 
     ```bash
-    git clone git@gitlab.com:liviubalan/blockchain-php blockchain-php-2
+    git clone git@github.com:liviubalan/blockchain-php.git blockchain-php-2
     ```
 
 3. Generate `follow.sh` by following the wizard. For this follow the steps after running:
@@ -104,27 +104,27 @@ For this type:
     vagrant ssh node1
     ```
 
-   1. *Optional.* If you've using [Vagrant](https://en.wikipedia.org/wiki/Vagrant_(software)) you can destroy the
-   [VM](https://en.wikipedia.org/wiki/Virtual_machine) by typing:
+8*Optional.* If you've using [Vagrant](https://en.wikipedia.org/wiki/Vagrant_(software)) you can destroy the
+[VM](https://en.wikipedia.org/wiki/Virtual_machine) by typing:
 
-       ```bash
-       vagrant destroy -f
-       ```
+   ```bash
+   vagrant destroy -f
+   ```
 
-       Remember that this command only destroys the [VM](https://en.wikipedia.org/wiki/Virtual_machine). If you want to
-       set your environment to a clean state (except `www` directory) you will have to recreate the project or reset it
-       to a specific state using `git reset`.
+   Remember that this command only destroys the [VM](https://en.wikipedia.org/wiki/Virtual_machine). If you want to
+   set your environment to a clean state you will have to recreate the project or reset it to a specific state using
+   `git reset`.
 
-8. *Optional.* To speed up the [VM](https://en.wikipedia.org/wiki/Virtual_machine) management after you create it you
+9. *Optional.* To speed up the [VM](https://en.wikipedia.org/wiki/Virtual_machine) management after you create it you
 can use `vagrant provision`:
 
-      ```bash
-      vagrant provision
-      ```
+    ```bash
+    vagrant provision
+    ```
 
 ### 2. OpenStack EOS
 
-1. Move to `/var/www/`:
+1. Change the current working directory to `/var/www/`:
 
     ```bash
     cd /var/www/
@@ -133,7 +133,7 @@ can use `vagrant provision`:
 2. Clone the [GitHub](https://github.com/liviubalan/blockchain-php) main project to `blockchain.emag`:
 
     ```bash
-    git clone https://github.com/liviubalan/blockchain-php-v2 blockchain.emag
+    git clone git@github.com:liviubalan/blockchain-php.git blockchain.emag
     ```
 
 3. Clone the [GitHub](https://github.com/liviubalan/blockchain-php) temporary project. This will help you to follow the
@@ -142,7 +142,7 @@ can use `vagrant provision`:
    that this directory is temporary so do not rely on its content.  To clone the project to `blockchain.emag-2` use:
 
     ```bash
-    git clone https://github.com/liviubalan/blockchain-php-v2 blockchain.emag-2
+    git clone git@github.com:liviubalan/blockchain-php.git blockchain.emag-2
     ```
 
 4. Setup environment by running `open-stack.sh`. For this follow the steps after running:
