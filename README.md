@@ -104,12 +104,12 @@ For this type:
     vagrant ssh node1
     ```
 
-8*Optional.* If you've using [Vagrant](https://en.wikipedia.org/wiki/Vagrant_(software)) you can destroy the
+8. *Optional.* If you've using [Vagrant](https://en.wikipedia.org/wiki/Vagrant_(software)) you can destroy the
 [VM](https://en.wikipedia.org/wiki/Virtual_machine) by typing:
 
-   ```bash
-   vagrant destroy -f
-   ```
+    ```bash
+    vagrant destroy -f
+    ```
 
    Remember that this command only destroys the [VM](https://en.wikipedia.org/wiki/Virtual_machine). If you want to
    set your environment to a clean state you will have to recreate the project or reset it to a specific state using

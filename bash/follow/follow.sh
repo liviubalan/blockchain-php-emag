@@ -76,6 +76,7 @@ do
 
         # Reset Git to previous commit
         git reset --hard "${BTC_COMMIT_HASH[BTC_TMP_I-1]}" >/dev/null 2>&1
+        git clean -df >/dev/null 2>&1
 
         echo "Step "${BTC_STEP}": ${BTC_COMMIT_DESCRIPTION[BTC_TMP_I]}"
         echo "Previous commit: ${BTC_COMMIT_HASH[BTC_TMP_I-1]}"
