@@ -1,4 +1,4 @@
-# liviubalan/blockchain-php
+# liviubalan/blockchain-php-v2
 
 This repo is used for educational purpose only and should not be used on a production environment.
 The purpose is to understand how
@@ -37,22 +37,22 @@ A web browser (such as [Google Chrome](https://en.wikipedia.org/wiki/Google_Chro
 
 ### 1. localhost
 
-After the [Requirements](https://github.com/liviubalan/blockchain-php#1-localhost) section is checked, open a
+After the [Requirements](https://github.com/liviubalan/blockchain-php-v2#1-localhost) section is checked, open a
 [console](https://en.wikipedia.org/wiki/Command-line_interface) and follow this steps:
 
-1. Clone the [GitHub](https://github.com/liviubalan/blockchain-php) main project. To clone the project to
+1. Clone the [GitHub](https://github.com/liviubalan/blockchain-php-v2) main project. To clone the project to
 `blockchain-php` use:
 
     ```bash
-    git clone git@github.com:liviubalan/blockchain-php.git blockchain-php
+    git clone git@github.com:liviubalan/blockchain-php-v2.git blockchain-php
     ```
 
-2. Clone the [GitHub](https://github.com/liviubalan/blockchain-php) temporary project. This will help you to follow the
+2. Clone the [GitHub](https://github.com/liviubalan/blockchain-php-v2) temporary project. This will help you to follow the
 project during the course without typing any line of code but be able to see the changes in your PhpStorm IDE. Remember
 that this directory is temporary so do not rely on its content.  To clone the project to `blockchain-php-2` use:
 
     ```bash
-    git clone git@github.com:liviubalan/blockchain-php.git blockchain-php-2
+    git clone git@github.com:liviubalan/blockchain-php-v2.git blockchain-php-2
     ```
 
 3. Generate `follow.sh` by following the wizard. For this follow the steps after running:
@@ -122,6 +122,13 @@ can use `vagrant provision`:
     vagrant provision
     ```
 
+10. If you're using [Symfony](https://symfony.com/) run `composer install` before accessing the domain:
+
+    ```bash
+    cd www/
+    php -d memory_limit=-1 composer.phar install
+    ```
+
 ### 2. OpenStack EOS
 
 1. Change the current working directory to `/var/www/`:
@@ -130,19 +137,19 @@ can use `vagrant provision`:
     cd /var/www/
     ```
 
-2. Clone the [GitHub](https://github.com/liviubalan/blockchain-php) main project to `blockchain.emag`:
+2. Clone the [GitHub](https://github.com/liviubalan/blockchain-php-v2) main project to `blockchain.emag`:
 
     ```bash
-    git clone git@github.com:liviubalan/blockchain-php.git blockchain.emag
+    git clone git@github.com:liviubalan/blockchain-php-v2.git blockchain.emag
     ```
 
-3. Clone the [GitHub](https://github.com/liviubalan/blockchain-php) temporary project. This will help you to follow the
+3. Clone the [GitHub](https://github.com/liviubalan/blockchain-php-v2) temporary project. This will help you to follow the
    project during the course without typing any line of code but be able to see the changes in CLI. Remember that this 
    environment is CLI only so you will not be able to see the changes in PhpStorm IDE. Use `git diff` instead. Remember
    that this directory is temporary so do not rely on its content.  To clone the project to `blockchain.emag-2` use:
 
     ```bash
-    git clone git@github.com:liviubalan/blockchain-php.git blockchain.emag-2
+    git clone git@github.com:liviubalan/blockchain-php-v2.git blockchain.emag-2
     ```
 
 4. Setup environment by running `open-stack.sh`. For this follow the steps after running:
@@ -164,8 +171,34 @@ can use `vagrant provision`:
     bash follow.sh 2
     ```
 
+7. If you're using [Symfony](https://symfony.com/) run `composer install` before accessing the domain:
+
+    ```bash
+    cd www/
+    php -d memory_limit=-1 composer.phar install
+    ```
+
 ## Resources
 
 * https://medium.com/@essentia1/50-examples-of-how-blockchains-are-taking-over-the-world-4276bf488a4b
+* https://en.wikipedia.org/wiki/Bitcoin
+* https://en.wikipedia.org/wiki/Ethereum
+* https://github.com/bitcoin/bitcoin
+* https://github.com/ethereum
 * https://en.wikipedia.org/wiki/Blockchain
-* https://github.com/liviubalan/blockchain-php-emag
+* https://github.com/liviubalan/blockchain-php
+* https://github.com/liviubalan/blockchain-php-v1
+* https://github.com/liviubalan/blockchain-php-v2
+* https://linuxconfig.org/how-to-check-centos-version
+* https://app.vagrantup.com/bento/boxes/centos-7
+* https://www.digitalocean.com/community/tutorials/how-to-install-git-on-centos-7
+* https://serverfault.com/questions/442088/how-do-you-answer-yes-for-yum-install-automatically
+* https://www.digitalocean.com/community/tutorials/how-to-install-linux-nginx-mysql-php-lemp-stack-on-centos-7
+* https://stackoverflow.com/questions/60241148/linux-shell-su-c-sed-command
+* https://linuxhint.com/replace_string_in_file_bash/
+* https://phoenixnap.com/kb/how-to-set-up-nginx-server-blocks-virtual-hosts-centos-7
+* https://www.digitalocean.com/community/tutorials/how-to-set-up-nginx-server-blocks-on-centos-7
+* https://stackoverflow.com/questions/32087679/vagrant-and-synced-folders-how-to-set-the-owner-to-a-user-other-than-the-defaul
+* https://github.com/hashicorp/vagrant/issues/936
+* https://symfony.com/doc/4.4/setup.html
+* https://stackoverflow.com/questions/38793676/php-xml-extension-not-installed
